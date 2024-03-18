@@ -9,11 +9,11 @@ class Voice(commands.Cog):
         gmember: discord.Member = self.bot.get_guild(self.bot.guild_id).get_member(thread.recipient.id)
         msg = thread.genesis_message
         if gmember and gmember.voice:
-        embed = discord.Embed(
+            embed = discord.Embed(
             description=f'This User is currently in Voice Channel {gmember.voice.channel.mention}.',
             color=discord.Color.blue()
-        )
-        await thread.channel.send(embed=embed)
+            )
+            await thread.channel.send(embed=embed)
         
 async def setup(bot):
     await bot.add_cog(Voice(bot))
