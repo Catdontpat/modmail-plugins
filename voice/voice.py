@@ -7,7 +7,6 @@ class Voice(commands.Cog):
     @commands.Cog.listener()
     async def on_thread_ready(self, thread, creator, category, initial_message):
         gmember: discord.Member = self.bot.get_guild(self.bot.guild_id).get_member(thread.recipient.id)
-        msg = thread.genesis_message
         if gmember and gmember.voice:
             embed = discord.Embed(
             description=f'This User is currently in Voice Channel {gmember.voice.channel.mention}.',
