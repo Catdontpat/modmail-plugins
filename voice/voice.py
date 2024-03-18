@@ -17,3 +17,6 @@ class Voice(commands.Cog):
                 return
         except AttributeError:
             return await thread.send('An error has occurred.')
+        
+async def setup(bot):
+    await bot.add_cog(Voice(bot))
